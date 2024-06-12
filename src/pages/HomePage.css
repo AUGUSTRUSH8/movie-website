@@ -24,6 +24,17 @@
 .category-title {
     color: #fff;
     /* 类别标题颜色，如果你希望它有好的对比度 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 添加动画效果，持续时间为0.3秒并有ease效果 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手形指针 */
+}
+
+.category-title:hover {
+    background-color: #444;
+    /* 悬停状态的背景色改变，与之前在 .subcategory-item 中定义的保持一致 */
+    color: #ddd;
+    /* 悬停状态的文字颜色改变，可以根据需要进行调整以提高对比度 */
 }
 
 /* 菜单子分类项的样式 */
