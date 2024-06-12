@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { getMoviesByCategory } from '../services/MovieService';
 import MenuList from '../components/MenuList';
 
+import './HomePage.css'; // 确保文件路径正确
+
 // 示例分类数据，可以根据实际情况进行调整
 const categories = [
   {
@@ -37,7 +39,7 @@ function HomePage() {
   };
 
   return (
-    <div className="homepage">
+    <div className="homepage-container">
       {/* 分类菜单 */}
       <div className="side-menu">
         <MenuList categories={categories} onCategorySelect={handleCategorySelect} />

@@ -1,14 +1,16 @@
-.homepage {
-    display: flex;
+/* src/pages/HomePage.css */
+
+.homepage-container {
+    display: flex; /* 设置Flexbox布局 */
   }
   
   .side-menu {
-    width: 250px; /* 或适合的宽度 */
-    /* 更多样式 */
+    flex: 0 0 250px; /* 设置边栏宽度，并不允许它随内容变化而变化 */
+    /* 更多样式，比如背景颜色，内边距等 */
   }
   
   .content {
-    flex: 1;
-    /* 更多样式 */
+    flex: 1; /* 允许内容区占据剩余空间 */
+    /* 更多样式，比如内边距等 */
   }
   
