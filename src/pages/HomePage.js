@@ -11,6 +11,14 @@ const categories = [
     name: "电影",
     subcategories: ["流行电影", "高分电影", "经典电影"],
   },
+  {
+    name: "电视剧",
+    subcategories: ["流行剧", "高分剧", "经典剧"],
+  },
+  {
+    name: "记录片",
+    subcategories: ["自然", "人文"],
+  },
   // 其他分类...
 ];
 
