@@ -1,16 +1,89 @@
 /* src/pages/HomePage.css */
 
 .homepage-container {
-    display: flex; /* 设置Flexbox布局 */
-  }
-  
-  .side-menu {
-    flex: 0 0 250px; /* 设置边栏宽度，并不允许它随内容变化而变化 */
-    /* 更多样式，比如背景颜色，内边距等 */
-  }
-  
-  .content {
-    flex: 1; /* 允许内容区占据剩余空间 */
-    /* 更多样式，比如内边距等 */
-  }
-  
+    display: flex;
+    /* 设置Flexbox布局 */
+}
+
+.side-menu {
+    flex: 0 0 250px;
+    /* 设置边栏宽度，并不允许它随内容变化而变化 */
+    background-color: #333;
+    /* 举例深色背景 */
+    color: #fff;
+    /* 文字颜色 */
+    /* 其他样式 */
+}
+
+/* 假设你想为包含菜单的整个块设置背景色 */
+.menu-list {
+    background-color: #333;
+    /* 深色背景 */
+}
+
+.category-title {
+    color: #fff;
+    /* 类别标题颜色，如果你希望它有好的对比度 */
+}
+
+/* 菜单子分类项的样式 */
+.subcategory-item {
+    list-style: none;
+    /* 去除列表默认样式 */
+    padding: 10px;
+    /* 留出一些内边距 */
+    color: #fff;
+    /* 文字颜色 */
+    cursor: pointer;
+    /* 鼠标悬停时显示指针，表明可点击 */
+}
+
+.subcategory-item:hover {
+    background-color: #444;
+    /* 悬浮时的背景色变化 */
+}
+
+
+
+
+
+.content {
+    flex: 1;
+    background-color: #f0f0f0;
+    /* 举例浅色背景 */
+    padding: 20px;
+    /* 或根据您的设计来设置适当的内边距 */
+    /* 其他样式 */
+}
+
+/* 为电影列表和单个电影项设置Flexbox布局 */
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* 设置两个电影之间的间隙，根据需要调整 */
+}
+
+.movie-item {
+    flex: 1 0 calc(50% - 10px);
+    /* 减去的10px是为了考虑间隙的空间 */
+    /* 其他样式 */
+    /* 确定图片不会太大或太小 */
+}
+
+/* 可选: 在小屏幕上单列显示 */
+@media (max-width: 768px) {
+    .movie-item {
+        flex: 1 0 100%;
+    }
+}
+
+/* 调整电影图片的样式 */
+.movie-item img {
+    width: 100%;
+    /* 图片占满整个电影项 */
+    height: auto;
+    /* 高度自适应 */
+    display: block;
+    /* 防止图片下方出现间隙 */
+}
