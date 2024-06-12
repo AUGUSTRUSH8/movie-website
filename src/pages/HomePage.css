@@ -1,0 +1,14 @@
+.homepage {
+    display: flex;
+  }
+  
+  .side-menu {
+    width: 250px; /* 或适合的宽度 */
+    /* 更多样式 */
+  }
+  
+  .content {
+    flex: 1;
+    /* 更多样式 */
+  }
+  
