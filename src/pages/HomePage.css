@@ -93,6 +93,16 @@
     /* 点击时的按下效果，轻微缩小，增加反馈感 */
 }
 
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* 根据实际情况调整，确保它在空白处占据足够的空间 */
+    font-size: 20px;
+    color: #555;
+}
+
 
 .side-menu {
     flex: 0 0 250px;
@@ -203,4 +213,17 @@
     /* 防止图片下方出现间隙 */
     margin-bottom: 1em;
     /* 为图片和标题之间添加一些间隔 */
+}
+
+.movies-list,
+.loading-container {
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    /* 初始状态为透明 */
+}
+
+.movies-list.show,
+.loading-container.show {
+    opacity: 1;
+    /* 完全加载后设置为不透明 */
 }

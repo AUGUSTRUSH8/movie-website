@@ -55,11 +55,15 @@ function HomePage() {
     setIsLoading(true); // 开始加载时设置为 true
     if (keyword) {
       const results = await searchMovies(keyword);
-      setSearchResults(results);
+      // 在此处不立即清除 searchResults
+      setTimeout(() => {
+        setSearchResults(results); // 加入延时，确保加载指示可见
+        setIsLoading(false);
+      }, 500); // 延时时间可根据实际加载时间调整
     } else {
       setSearchResults([]);
+      setIsLoading(false);
     }
-    setIsLoading(false); // 加载完成后设置为 false
   };
 
   // 根据是否有搜索结果自动选择展示搜索结果或普通分类电影列表
@@ -76,9 +80,9 @@ function HomePage() {
       <div className="content">
         <h1>{searchResults.length > 0 ? '搜索结果' : selectedCategory}</h1>
         {isLoading ? (
-          <p>正在加载...</p>
+          <div className={`loading-container ${isLoading ? 'show' : ''}`}>正在加载...</div>
         ) : (
-          <div className="movies-list">
+          <div className={`movies-list ${!isLoading ? 'show' : ''}`}>
             {displayedMovies.length > 0 ? (
               displayedMovies.map(movie => (
                 <div key={movie.id} className="movie-item">
