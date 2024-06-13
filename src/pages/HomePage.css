@@ -111,12 +111,13 @@ body,
 
 
 .side-menu {
-    flex: 0 0 250px;
+    /* flex: 0 0 250px; */
     /* 设置边栏宽度，并不允许它随内容变化而变化 */
     background-color: #333;
     /* 举例深色背景 */
     color: #fff;
-    overflow-y: auto;
+    width: 328;
+    overflow-x: hidden;
     /* 文字颜色 */
     /* 其他样式 */
 }
