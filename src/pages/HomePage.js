@@ -5,6 +5,23 @@ import MenuList from '../components/MenuList';
 import SearchBox from '../components/SearchBox'; // 确保正确导入SearchBox组件
 import './HomePage.css';
 
+// 示例分类数据，可以根据实际情况进行调整
+const categories = [
+  {
+    name: "电影",
+    subcategories: ["流行电影", "高分电影", "经典电影"],
+  },
+  {
+    name: "电视剧",
+    subcategories: ["流行剧", "高分剧", "经典剧"],
+  },
+  {
+    name: "记录片",
+    subcategories: ["自然", "人文"],
+  },
+  // 其他分类...
+];
+
 function HomePage() {
   const [movies, setMovies] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
