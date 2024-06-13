@@ -73,6 +73,10 @@
     flex-wrap: wrap;
     gap: 20px;
     /* 设置两个电影之间的间隙，根据需要调整 */
+    align-items: center;
+    /* 确保电影项在垂直方向上的居中 */
+    justify-content: center;
+    /* 在有多余空间时，保持水平居中 */
 }
 
 .movie-item {
@@ -82,7 +86,8 @@
     /* 确定图片不会太大或太小 */
 }
 
-/* 可选: 在小屏幕上单列显示 */
+/* 在小屏幕上单列显示的样式保持不变，因为它有效地将电影项叠加在一起，
+允许每个项目的宽度自动调整以适应屏幕 */
 @media (max-width: 768px) {
     .movie-item {
         flex: 1 0 100%;
@@ -91,10 +96,17 @@
 
 /* 调整电影图片的样式 */
 .movie-item img {
-    width: 100%;
-    /* 图片占满整个电影项 */
+    max-width: 100%;
+    max-height: 300px;
+    /* 或您想要的任何高度 */
+    width: auto;
+    /* 默认宽度自适应，保持图片原始宽高比 */
     height: auto;
-    /* 高度自适应 */
+    /* 默认高度自适应 */
     display: block;
-    /* 防止图片下方出现间隙 */
+    margin-left: auto;
+    /* 配合margin-right使图片水平居中 */
+    margin-right: auto;
+    object-fit: cover;
+    /* 确保图片覆盖容器，可能会裁剪图片以保持比例 */
 }
