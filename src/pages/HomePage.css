@@ -83,6 +83,12 @@
 }
 
 .search-btn:active {
+    display: inline-block;
+    /* 或者使用 block，视具体布局情况而定 */
+    min-width: 80px;
+    /* 根据实际情况调整 */
+    font-size: 16px;
+    /* 根据按钮大小适当调整字体大小 */
     transform: scale(0.98);
     /* 点击时的按下效果，轻微缩小，增加反馈感 */
 }
