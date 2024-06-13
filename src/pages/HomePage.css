@@ -117,7 +117,7 @@ body,
     /* 举例深色背景 */
     color: #fff;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
     /* 文字颜色 */
     /* 其他样式 */
 }
