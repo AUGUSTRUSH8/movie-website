@@ -2,6 +2,7 @@
 
 .homepage-container {
     display: flex;
+    height: 100%;
     /* 设置Flexbox布局 */
 }
 
