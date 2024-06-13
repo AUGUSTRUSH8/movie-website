@@ -58,11 +58,11 @@ function HomePage() {
       // 在此处不立即清除 searchResults
       setTimeout(() => {
         setSearchResults(results); // 加入延时，确保加载指示可见
-        // setIsLoading(false);
+        setIsLoading(false);
       }, 500); // 延时时间可根据实际加载时间调整
     } else {
       setSearchResults([]);
-      // setIsLoading(false);
+      setIsLoading(false);
     }
   };
 
