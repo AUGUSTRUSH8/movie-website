@@ -217,13 +217,16 @@
 
 .movies-list,
 .loading-container {
-    transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
     opacity: 0;
-    /* 初始状态为透明 */
+    visibility: hidden;
+    /* 初始时不可见 */
 }
 
 .movies-list.show,
 .loading-container.show {
     opacity: 1;
-    /* 完全加载后设置为不透明 */
+    visibility: visible;
+    transition-delay: 0s;
+    /* 立即变为可见 */
 }
