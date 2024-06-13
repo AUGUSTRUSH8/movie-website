@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import SearchBox from './SearchBox';  // 确保正确导入SearchBox组件
 
-const MenuList = ({ categories, onCategorySelect, onSearch }) => {
+const MenuList = ({ categories, onCategorySelect }) => {
   // 使用useState来创建一个状态，初始值为null，表示没有类别被展开
   const [expandedCategory, setExpandedCategory] = useState(null);
 
@@ -13,7 +12,6 @@ const MenuList = ({ categories, onCategorySelect, onSearch }) => {
 
   return (
     <div className="menu-list">
-      <SearchBox onSearch={onSearch} />  {/* 把 handleSearch 传递给 SearchBox */}
 
       {categories.map(category => (
         <div key={category.name} className="menu-category">
