@@ -61,5 +61,5 @@ const searchMovies = async (keyword) => {
   }
 };
 
-export { getPopularMovies };
+export { getPopularMovies, searchMovies };
 
