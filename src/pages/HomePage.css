@@ -1,4 +1,9 @@
 /* src/pages/HomePage.css */
+html,
+body,
+#root {
+    height: 100%;
+}
 
 .homepage-container {
     display: flex;
