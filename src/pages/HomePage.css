@@ -5,6 +5,89 @@
     /* 设置Flexbox布局 */
 }
 
+/* 搜索框样式 */
+.search-box {
+    margin: 20px;
+    /* 为搜索框留出一些外边距 */
+    padding: 10px;
+    /* 设置内边距，使得输入时有足够空间 */
+    background-color: #333;
+    /* 设置输入框背景色与侧边栏一致 */
+    border: 1px solid #444;
+    /* 设置边框颜色稍微亮一点，增加对比 */
+    border-radius: 20px;
+    /* 设置圆角，使其成为长椭圆形 */
+    color: #ddd;
+    /* 设置字体颜色 */
+}
+
+.search-box:focus {
+    outline: none;
+    /* 去除聚焦时的默认外轮廓线 */
+    border-color: #555;
+    /* 聚焦时边框颜色变化，增加互动效果 */
+    background-color: #3b3b3b;
+    /* 聚焦时背景颜色变深 */
+}
+
+.search-box::placeholder {
+    color: #555;
+    /* 设置占位符文字颜色 */
+}
+
+.search-box:hover {
+    background-color: #3b3b3b;
+    /* 悬浮时的背景色变化，为了一致性，可与聚焦时背景色一致 */
+    border-color: #555;
+    /* 悬浮时边框颜色变化 */
+    /* 可以添加动画效果，如边框渐变、阴影等 */
+}
+
+/* 搜索框外围的表单样式调整，以实现搜索框与按钮的内联显示，并调整间距 */
+.form-search {
+    display: flex;
+    /* 使用Flex布局，使输入框和按钮并排显示 */
+    justify-content: center;
+    /* 使内容居中显示，根据需要调整 */
+    align-items: center;
+    /* 垂直方向居中对齐 */
+    margin: 20px;
+    /* 与搜索框相匹配的边距 */
+}
+
+/* 搜索按钮样式 */
+.search-btn {
+    padding: 10px 20px;
+    /* 按钮内边距，根据需求调整 */
+    margin-left: 5px;
+    /* 与搜索框的间距 */
+    background-color: #444;
+    /* 按钮背景色，以与搜索框保持一致 */
+    border: none;
+    /* 去除默认边框 */
+    border-radius: 20px;
+    /* 圆角 */
+    color: #ddd;
+    /* 字体颜色 */
+    cursor: pointer;
+    /* 显示手型指针 */
+    transition: background-color 0.3s, color 0.3s;
+    /* 过渡动画 */
+}
+
+.search-btn:hover {
+    background-color: #555;
+    /* 悬浮时背景颜色变化，以便与搜索框协调 */
+    color: #fff;
+    /* 悬浮时字体颜色 */
+}
+
+.search-btn:active {
+    transform: scale(0.98);
+    /* 点击时的按下效果，轻微缩小，增加反馈感 */
+}
+
+
 .side-menu {
     flex: 0 0 250px;
     /* 设置边栏宽度，并不允许它随内容变化而变化 */

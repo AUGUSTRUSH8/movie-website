@@ -14,14 +14,15 @@ const SearchBox = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-search" onSubmit={handleSubmit}>
       <input
-        type="text"
+        type="search"
+        className="search-box"
         placeholder="搜索电影..."
         value={keyword}
         onChange={handleChange}
       />
-      <button type="submit">搜索</button>
+      <button type="submit" className="search-btn">搜索</button>
     </form>
   );
 };
