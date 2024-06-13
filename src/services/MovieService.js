@@ -46,5 +46,20 @@ export const getMoviesByCategory = async (categoryName) => {
   }
 };
 
+const searchMovies = async (keyword) => {
+  const endpoint = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(keyword)}`;
+  try {
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`API call failed with status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data.results; // 返回搜索结果数组
+  } catch (error) {
+    console.error('Error occurred while fetching search results:', error);
+    return []; // 发生错误时返回空数组
+  }
+};
+
 export { getPopularMovies };
 

@@ -1,6 +1,6 @@
 // src/pages/HomePage.js
 import React, { useEffect, useState } from 'react';
-import { getMoviesByCategory } from '../services/MovieService';
+import { getMoviesByCategory, searchMovies } from '../services/MovieService';
 import MenuList from '../components/MenuList';
 
 import './HomePage.css'; // 确保文件路径正确
@@ -46,6 +46,21 @@ function HomePage() {
     setSelectedCategory(subCategoryName);
   };
 
+  const [searchResults, setSearchResults] = useState([]); // 新状态：用于存储搜索结果
+
+   // 新增加的搜索逻辑
+   const handleSearch = async (keyword) => {
+    if (keyword) {
+      const results = await searchMovies(keyword);
+      setSearchResults(results);
+    } else {
+      setSearchResults([]); // 如果没有关键字，清除搜索结果
+    }
+  };
+
+  // 当渲染内容时，根据是否有搜索结果来决定显示内容
+  const displayedMovies = searchResults.length > 0 ? searchResults : movies;
+
   return (
     <div className="homepage-container">
       {/* 分类菜单 */}
@@ -55,12 +70,13 @@ function HomePage() {
 
       {/* 电影列表内容 */}
       <div className="content">
-        <h1>{selectedCategory}</h1>
+      <h1>{searchResults.length > 0 ? '搜索结果' : selectedCategory}</h1>
+
         <div className="movies-list">
-          {movies.length === 0 ? (
+          {displayedMovies.length === 0 ? (
             <p>暂无电影展示</p>
           ) : (
-            movies.map(movie => (
+            displayedMovies.map(movie => (
               <div key={movie.id} className="movie-item">
                 <h3>{movie.title}</h3>
                 {/* 注意：确保图片的路径是正确的 */}
